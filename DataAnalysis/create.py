@@ -55,7 +55,9 @@ conn.close()
 print("New database students.db created with two tables: info and scores")
 print("Seed data inserted into the tables")
 print("Script ran successfully")
- 
+
+# this is my first github commit
+
 
 
 
