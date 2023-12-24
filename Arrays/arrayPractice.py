@@ -4,7 +4,7 @@ from array import *
 
 # 1. Create an array and traverse. 
 
-my_array = array('i',[1,2,3,4,5])
+my_array = array('i', [1, 2, 3, 4, 5])
 
 for i in my_array:
     print(i)
@@ -28,13 +28,13 @@ print(my_array)
 
 # 5. Extend python array using extend() method
 print("Step 5")
-my_array1 = array('i', [10,11,12])
+my_array1 = array('i', [10, 11, 12])
 my_array.extend(my_array1)
 print(my_array)
 
 # 6. Add items from list into array using fromlist() method
 print("Step 6")
-tempList = [20,21,22]
+tempList = [20, 21, 22]
 my_array.fromlist(tempList)
 print(my_array)
 
@@ -68,11 +68,13 @@ print(my_array.count(11))
 print(my_array)
 # 13. Convert array to string using tostring() method
 print("Step 13")
-strTemp = my_array.tostring()
+strTemp = my_array.tobytes()
 print(strTemp)
-ints = array('i')
-ints.fromstring(strTemp)
-print(ints)
+# ints = my_array.frombytes()
+# ints.fromstring(strTemp)
+new_array = array('i')
+new_array.fromstring(strTemp)
+print(new_array)
 
 # 14. Convert array to a python list with same elements using tolist() method
 print("Step 14")
@@ -82,8 +84,3 @@ print(my_array.tolist())
 # 16. Slice Elements from an array
 print("Step 16")
 print(my_array[:])
-
-
-
-
-
