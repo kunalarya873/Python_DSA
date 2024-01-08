@@ -9,7 +9,7 @@ class Stack():
   
   def __len__(self):
     return len(self.list)
-  
+   
   def push(self, item):
     self.list.append(item)
   
@@ -41,4 +41,7 @@ customQueue.enqueue(2)
 customQueue.enqueue(3)
 print(customQueue.dequeue())
 customQueue.enqueue(4)
+print(customQueue.dequeue())
+print(customQueue.dequeue())
+print(customQueue.dequeue())
 print(customQueue.dequeue())

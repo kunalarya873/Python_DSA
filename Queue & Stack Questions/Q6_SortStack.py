@@ -15,7 +15,8 @@ def sort_stack(stack):
     else: 
       temp.push(current)
       current = stack.pop()
-    if current == None and previous: temp.push(previous)
+    if current == None and previous:
+      temp.push(previous)
        
   sorted = True
   previous = temp.pop()
@@ -29,9 +30,12 @@ def sort_stack(stack):
       stack.push(current)
       current = temp.pop()
       sorted = False
-    if current == None and previous: stack.push(previous)
-  if sorted: return stack
-  else: return sort_stack(stack)
+    if current == None and previous:
+      stack.push(previous)
+  if sorted:
+    return stack
+  else: 
+    return sort_stack(stack)
 
 class Stack():
   def __init__(self):
