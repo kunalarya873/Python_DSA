@@ -30,6 +30,25 @@ Data structures and algorithms aren't just theoretical concepts. We demonstrate 
 
 We believe in the power of community-driven learning. Contribute your knowledge, insights, or code implementations to help others learn and grow.
 
+# How to Contribute
+
+Contributions are welcome! If you have additional cheatsheets, improvements, or corrections, feel free to contribute. Follow these steps:
+
+1. Fork the repository.
+2. Create a new branch: `git checkout -b feature/your-feature`.
+3. Commit your changes: `git commit -m 'Add your feature'`.
+4. Push to the branch: `git push origin feature/your-feature`.
+5. Open a pull request.
+
+<!-- Getting Started Section -->
+## Getting Started
+
+To get started with this project, follow these steps:
+
+1. **Clone the Repository**:
+   ```bash
+   git clone https://github.com/kunalarya873/Python_DSA
+
 ## 🌈 Start Your Journey
 
 Ready to enhance your Python skills? Dive into our comprehensive resources and embark on a learning journey that will transform you into a Python data structure and algorithm wizard! 🧙‍♂️
