@@ -1,5 +1,7 @@
 # Python Data Structures and Algorithms 📊🐍
 
+<img align="center" src="https://dpi.df.daffodil.family/web/image/slide.channel/176/image_1920/Data%20Structure%20%26%20Algorithm%20%2828542%29?unique=f8b2c6f"></img>
+
 Welcome to the Python Data Structures and Algorithms repository! Here, we delve into the fascinating world of data structures and algorithms, empowering you with the knowledge and skills to tackle complex problems and optimize your Python code. 🚀
 
 ## 📚 Explore Data Structures
