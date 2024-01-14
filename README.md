@@ -57,4 +57,4 @@ Ready to enhance your Python skills? Dive into our comprehensive resources and e
 
 ---
 
-[**Get Started**](#) • [**Contributors**](#) • [**Resources**](#) • [**Join the Discussion**](#)
+[**Get Started**](https://github.com/kunalarya873/Python_DSA) • [**Contributors**](https://github.com/kunalarya873) • [**Resources**](https://github.com/kunalarya873/Python_DSA/blob/main/Data%2BStructures%2Band%2BAlgorithms%2BBootcamp%2Bin%2BPython%2Bslides%2BRemaster.pdf) • [**Join the Discussion**](#)
