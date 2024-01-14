@@ -1,5 +1,7 @@
 # Python Data Structures and Algorithms 📊🐍
 
+<img align="center" src="https://miro.medium.com/v2/resize:fit:1358/1*4ZcW5tSdizlbtDQyVpRTuA.jpeg"></img>
+
 Welcome to the Python Data Structures and Algorithms repository! Here, we delve into the fascinating world of data structures and algorithms, empowering you with the knowledge and skills to tackle complex problems and optimize your Python code. 🚀
 
 ## 📚 Explore Data Structures
@@ -27,6 +29,25 @@ Data structures and algorithms aren't just theoretical concepts. We demonstrate 
 ## 💡 Contribute and Collaborate
 
 We believe in the power of community-driven learning. Contribute your knowledge, insights, or code implementations to help others learn and grow.
+
+# How to Contribute
+
+Contributions are welcome! If you have additional cheatsheets, improvements, or corrections, feel free to contribute. Follow these steps:
+
+1. Fork the repository.
+2. Create a new branch: `git checkout -b feature/your-feature`.
+3. Commit your changes: `git commit -m 'Add your feature'`.
+4. Push to the branch: `git push origin feature/your-feature`.
+5. Open a pull request.
+
+<!-- Getting Started Section -->
+## Getting Started
+
+To get started with this project, follow these steps:
+
+1. **Clone the Repository**:
+   ```bash
+   git clone https://github.com/kunalarya873/Python_DSA
 
 ## 🌈 Start Your Journey
 
