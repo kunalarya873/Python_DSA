@@ -16,7 +16,7 @@ class Node:
         self.predecessor = None
         self.neighbors = []
         self.min_distance = float("inf")
-    
+        
     def __lt__(self, other_node):
         return self.min_distance < other_node.min_distance
     
