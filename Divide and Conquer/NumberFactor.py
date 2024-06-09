@@ -14,4 +14,4 @@ def numberFactor(n):
         subP3 = numberFactor(n-4)
         return subP1+subP2+subP3
 
-print(numberFactor(5))
+print(numberFactor(6))
