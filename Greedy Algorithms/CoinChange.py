@@ -15,7 +15,6 @@ def coinChange(totalNumber, coins):
             N = N - coinValue
         if N < coinValue:
             index -= 1
-        
         if N == 0:
             break
 
