@@ -33,7 +33,7 @@ print("stack is ",stack)  # []
 print("pop from stack is ",stack.pop())  # IndexError: pop from an empty deque
 
 
-# Stack implementation using queue
+# Stack implementation using LifoQueue
 from queue import LifoQueue
 stack = LifoQueue(maxsize=3)
 stack.put('a')
