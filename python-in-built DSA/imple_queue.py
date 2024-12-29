@@ -110,6 +110,10 @@ class CircluarQ:
     
 q = CircluarQ(5)
 q.equeue(1).display()
+# [1, None, None, None, None]
+# Front: 0
+# Rear: 1
+# Size: 1
 q.equeue(2).display()
 # [1, 2, None, None, None]
 # Front: 0
