@@ -31,9 +31,21 @@ class LinkedList:
                 print(n.data, " --> ", end="")
                 n = n.ref
             print("None")
+    
+    def add_end(self, data):
+        new_node = Node(data)
+        if self.head is None:
+            self.head = new_node
+        else:
+            temp = self.head
+            while temp.ref is not None:
+                temp = temp.ref
+            temp.ref = new_node
 
 obj1 = LinkedList()
 obj1.add_starting(10)
 obj1.add_starting(20)
 obj1.add_starting(30)
+obj1.add_end(40)
+obj1.add_end(33)
 obj1.print()
