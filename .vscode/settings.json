@@ -1,0 +1,23 @@
+{
+    "editor.quickSuggestions": {
+        "other": false,
+        "comments": false,
+        "strings": false
+    },
+    "editor.suggestOnTriggerCharacters": false,
+    "editor.wordBasedSuggestions": "off",
+    "editor.parameterHints.enabled": false,
+    "editor.inlineSuggest.enabled": false,
+    "editor.acceptSuggestionOnEnter": "off",
+    "editor.snippetSuggestions": "none",
+    "editor.autoClosingBrackets": "never",
+    "editor.autoClosingQuotes": "never",
+    "editor.autoSurround": "never",
+    "editor.codeActionsOnSave": null,
+    "typescript.suggest.autoImports": false,
+    "javascript.suggest.autoImports": false,
+    "css.validate": false,
+    "scss.validate": false,
+    "less.validate": false,
+    "html.suggest.html5": false
+}
