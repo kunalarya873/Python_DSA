@@ -41,6 +41,20 @@ class LinkedList:
             while temp.ref is not None:
                 temp = temp.ref
             temp.ref = new_node
+    
+    def add_after(self, data, value):
+        temp =self.head
+        while temp is not None:
+            if value == temp.data:
+                break
+            temp = temp.ref
+        if temp is None:
+            print("Node is not found in linked list")
+        else:
+            new_node = Node(data)
+            new_node.ref = temp.ref
+            temp.ref = new_node
+
 
 obj1 = LinkedList()
 obj1.add_starting(10)
@@ -48,4 +62,5 @@ obj1.add_starting(20)
 obj1.add_starting(30)
 obj1.add_end(40)
 obj1.add_end(33)
+obj1.add_after(100,30)
 obj1.print()
