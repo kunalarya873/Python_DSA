@@ -107,6 +107,25 @@ class LinkedList:
         else:
             ptr.ref = temp.ref
             temp = None
+    
+    def delete_specific_node_after(self, x):
+        if self.head == None:
+            print("Cannot be Deleted")
+            return
+        temp = self.head
+        while(temp.data != x):
+            temp = temp.ref
+        if temp.ref is None:
+            print("Cannot be deleted")
+            return
+        elif(temp.ref.ref is None):
+            ptr = temp.ref
+            temp.ref = None
+        else:
+            ptr = temp.ref
+            temp.ref = ptr.ref
+            ptr = None
+        
 
 obj1 = LinkedList()
 obj1.add_starting(10)
