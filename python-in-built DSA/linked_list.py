@@ -55,7 +55,24 @@ class LinkedList:
             new_node.ref = temp.ref
             temp.ref = new_node
     def add_before(self, data, value):
-        pass
+        if self.head is None:
+            print("Linked list is emptyt")
+        if self.head.data == value:
+            new_node = Node(data)
+            new_node.ref = self.head
+            self.head = new_node
+            return
+        temp = self.head
+        while(temp.data != value):
+            ptr = temp
+            temp = temp.ref
+        if temp is None:
+            print("Node is not found is LL")
+        else:
+            new_node = Node(data)
+            new_node.ref = ptr.ref
+            ptr.ref = new_node
+
 
 obj1 = LinkedList()
 obj1.add_starting(10)
@@ -64,4 +81,5 @@ obj1.add_starting(30)
 obj1.add_end(40)
 obj1.add_end(33)
 obj1.add_after(100,30)
+obj1.add_before(34,33)
 obj1.print()
