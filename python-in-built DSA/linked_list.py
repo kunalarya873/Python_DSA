@@ -72,7 +72,41 @@ class LinkedList:
             new_node = Node(data)
             new_node.ref = ptr.ref
             ptr.ref = new_node
+        
+    def delete_start(self):
+        if self.head is None:
+            print("Linked List is empty")
+        else:
+            temp = self.head
+            self.head = self.head.ref
 
+    def delete_end(self):
+        if self.head is None:
+            print("Linked List is empty")
+        elif self.head.ref is None:
+            self.head = None
+        else:
+            temp = self.head
+            ptr = temp.ref
+            while ptr.ref is not None:
+                temp = temp.ref
+                ptr = ptr.ref
+            temp.ref = None
+
+    def delete_node(self, x):
+        if self.head is None:
+            print("Cannot be deleted")
+        if x == self.head.data:
+            self.head = self.head.ref
+        temp = self.head
+        while (temp.data != x):
+            ptr = temp 
+            temp = temp.ref
+        if (temp is None):
+            print("Node is not available")
+        else:
+            ptr.ref = temp.ref
+            temp = None
 
 obj1 = LinkedList()
 obj1.add_starting(10)
@@ -82,4 +116,10 @@ obj1.add_end(40)
 obj1.add_end(33)
 obj1.add_after(100,30)
 obj1.add_before(34,33)
+obj1.print()
+obj1.delete_start()
+obj1.print()
+obj1.delete_end()
+obj1.print()
+obj1.delete_node(40)
 obj1.print()
