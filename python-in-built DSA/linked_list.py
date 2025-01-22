@@ -54,7 +54,8 @@ class LinkedList:
             new_node = Node(data)
             new_node.ref = temp.ref
             temp.ref = new_node
-
+    def add_before(self, data, value):
+        pass
 
 obj1 = LinkedList()
 obj1.add_starting(10)
