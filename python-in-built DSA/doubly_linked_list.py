@@ -26,6 +26,7 @@ class DoublyLinkedList:
             while temp is not None:
                 print(temp.data, " --> ", end="")
                 temp = temp.nref
+            print("None")
     
     def printdoublylinkedlistreverse(self):
         if self.head is None:
@@ -39,6 +40,7 @@ class DoublyLinkedList:
             while ptr is not None:
                 print(ptr.data, "-->", end="")
                 ptr= ptr.pref
+            print("None")
             
 
 
