@@ -41,7 +41,18 @@ class DoublyLinkedList:
                 print(ptr.data, "-->", end="")
                 ptr= ptr.pref
             print("None")
-            
+        
+    
+    def add_end(self, data):
+        new_node = Node(data)
+        if self.head is None:
+            self.head = new_node
+        else:
+            temp = self.head
+            while temp.nref is not None:
+                temp = temp.nref
+            temp.nref = new_node
+            new_node.pref = temp
 
 
 obj1 = DoublyLinkedList()
@@ -50,6 +61,7 @@ obj1.add_starting(20)
 obj1.add_starting(2000)
 obj1.add_starting(210)
 obj1.add_starting(1120)
+obj1.add_end(333)
 obj1.printdoublylinkedlist()
 print()
 obj1.printdoublylinkedlistreverse()
