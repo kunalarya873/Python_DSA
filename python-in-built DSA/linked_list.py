@@ -115,6 +115,9 @@ class LinkedList:
         temp = self.head
         while(temp.data != x):
             temp = temp.ref
+            if (temp is None):
+                print("Node is not available")
+                return
         if temp.ref is None:
             print("Cannot be deleted")
             return
