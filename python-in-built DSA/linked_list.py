@@ -128,6 +128,31 @@ class LinkedList:
             ptr = temp.ref
             temp.ref = ptr.ref
             ptr = None
+    
+    def delete_specific_node_before(self, x):
+        if self.head  == None:
+            print("Can't delete the node")
+            return
+        temp = self.head
+        ptr = temp.ref
+
+        if (ptr is None or temp.data == x):
+            print("can't be delete")
+            return
+        if ptr.data == x:
+            self.head = temp.ref
+            return
+        if (ptr.ref is None):
+            print("Node does not exist")
+        while(ptr.ref.data !=x):
+            ptr = ptr.ref
+            temp = temp.ref
+            if (temp.ref is None):
+                print("Node does not exist")
+                return
+        temp.ref = ptr.ref
+        ptr = None
+        
         
 
 obj1 = LinkedList()
