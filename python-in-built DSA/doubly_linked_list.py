@@ -42,7 +42,6 @@ class DoublyLinkedList:
                 ptr= ptr.pref
             print("None")
         
-    
     def add_end(self, data):
         new_node = Node(data)
         if self.head is None:
@@ -167,6 +166,33 @@ class DoublyLinkedList:
             temp.nref = ptr.nref
             ptr.nref.pref = temp
 
+    def delete_specific_node_before(self, x):
+        if self.head is None:
+            print("Linked List is empty")
+            return
+        temp = self.head
+        ptr = temp.nref
+        if ptr is None or temp.data == x:
+            print("Cannot be deleted")
+            return
+        if (ptr.data == x):
+            self.head = self.head.nref
+            self.head.pref = None
+            return
+        if (ptr.nref is None):
+            print("Node does not exist")
+            return
+        while(ptr.nref.data == x):
+            ptr = ptr.nref
+            temp = temp.nref
+            if (ptr.nref is None):
+                print("Node does not exist")
+                return
+        temp.nref = ptr.nref
+        ptr.nref.pref = temp
+        ptr = None
+        
+
 obj1 = DoublyLinkedList()
 obj1.printdoublylinkedlist()
 obj1.add_starting(20)
@@ -181,6 +207,7 @@ obj1.delete_begin()
 obj1.delete_end()
 obj1.delete_specific(210)
 obj1.delete_specific_node_after(20)
+obj1.delete_specific_node_before(1120)
 obj1.printdoublylinkedlist()
 print()
 obj1.printdoublylinkedlistreverse()
