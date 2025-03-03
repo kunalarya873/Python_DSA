@@ -74,6 +74,29 @@ class DoublyLinkedList:
         
         # Update the original node's next pointer
         temp.nref = new_node
+    
+    def add_before(self, data, value):
+        if self.head is None:
+            print("Linked List is empty")
+            return
+        if self.head.data == value:
+            new_node = Node(data)
+            new_node.nref = self.head
+            self.head.pref = new_node
+            self.ead = new_node
+            return
+        temp = self.head
+        while(temp.data != value):
+            ptr = temp
+            temp = temp.nref
+            if temp is None:
+                print("Node is not found")
+                return
+        new_node = Node(data)
+        new_node.nref = temp
+        new_node.pref = ptr
+        ptr.nref = new_node
+        temp.pref = new_node
 
 
 
@@ -85,6 +108,7 @@ obj1.add_starting(210)
 obj1.add_starting(1120)
 obj1.add_end(333)
 obj1.add_after(10,210)
+obj1.add_before(123, 10)
 obj1.printdoublylinkedlist()
 print()
 obj1.printdoublylinkedlistreverse()
