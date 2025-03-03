@@ -97,6 +97,17 @@ class DoublyLinkedList:
         new_node.pref = ptr
         ptr.nref = new_node
         temp.pref = new_node
+    
+    def delete_begin(self):
+        if self.head is None:
+            print("Linked List is empty")
+            return
+        else:
+            temp = self.head
+            self.head = temp.nref
+            if temp.nref is not None:
+                self.head.pref = None
+        
 
 
 
@@ -109,6 +120,8 @@ obj1.add_starting(1120)
 obj1.add_end(333)
 obj1.add_after(10,210)
 obj1.add_before(123, 10)
+obj1.printdoublylinkedlist()
+obj1.delete_begin()
 obj1.printdoublylinkedlist()
 print()
 obj1.printdoublylinkedlistreverse()
