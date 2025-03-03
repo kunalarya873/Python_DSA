@@ -144,7 +144,28 @@ class DoublyLinkedList:
                     return
                 temp = temp.nref
             print("Node not found")
-
+    
+    def delete_specific_node_after(self, x):
+        if self.head is None:
+            print("Linked List is empty")
+            return
+        temp = self.head
+        while temp.data != x:
+            temp = temp.nref
+            if temp is None:
+                print("Node is not found")
+                return
+        if temp.nref is None:
+            print("Node is not found")
+            return
+        elif (temp.nref.nref is None):
+            ptr = temp.nref
+            temp.nref = ptr.nref
+            ptr = None
+        else:
+            ptr = temp.nref
+            temp.nref = ptr.nref
+            ptr.nref.pref = temp
 
 obj1 = DoublyLinkedList()
 obj1.printdoublylinkedlist()
@@ -159,6 +180,7 @@ obj1.printdoublylinkedlist()
 obj1.delete_begin()
 obj1.delete_end()
 obj1.delete_specific(210)
+obj1.delete_specific_node_after(20)
 obj1.printdoublylinkedlist()
 print()
 obj1.printdoublylinkedlistreverse()
