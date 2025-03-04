@@ -43,13 +43,31 @@ class CircularLinkedList:
                 temp = temp.ref
             new_node.ref = self.head
             temp.ref = new_node
+    
+    def add_after(self, value, data):
+        new_node = Node(data)
+        if self.head is None:
+            new_node.ref = new_node
+            self.head = new_node
+        elif self.head.data == value:
+            self.head.ref = new_node
+            new_node.ref = self.head
+        else:
+            temp = self.head.ref
+            while(temp != self.head):
+                temp = temp.ref
+                if temp.data == value:
+                    new_node.ref = temp.ref
+                    temp.ref = new_node
+            print("Value not found")
 
 
 obj1 = CircularLinkedList()
-obj1.add_starting(10)
-obj1.add_starting(20)
-obj1.add_starting(30)
 obj1.add_starting(40)
+obj1.add_starting(30)
+obj1.add_starting(20)
+obj1.add_starting(10)
 obj1.add_last(50)
 obj1.add_starting(0.1)
+obj1.add_after(30, 35)
 obj1.print_ll()
