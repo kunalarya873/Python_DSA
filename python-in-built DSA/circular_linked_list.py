@@ -112,6 +112,17 @@ class CircularLinkedList:
         prev.ref = self.head
         return
 
+    def delete_specific(self, value):
+        if self.head is None:
+            print("Linked List is empty")
+        prev = self.head
+        if self.head.data == value:
+            self.head = None
+        temp = prev.ref
+        while temp.data != value:
+            prev = temp
+            temp = temp.ref
+        prev.ref = temp.ref
 obj1 = CircularLinkedList()
 obj1.add_starting(40)
 obj1.add_starting(30)
@@ -125,4 +136,6 @@ obj1.print_ll()
 obj1.delete_start()
 obj1.print_ll()
 obj1.delete_end()
+obj1.print_ll()
+obj1.delete_specific(40)
 obj1.print_ll()
