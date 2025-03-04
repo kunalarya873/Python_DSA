@@ -83,6 +83,19 @@ class CircularLinkedList:
                 prev = temp
                 temp = temp.ref
 
+    def delete_start(self):
+        if self.head is None:
+            print("Linked list is empty")
+        temp = self.head
+        if temp.ref is self.head:
+            self.head = None
+            return
+        second = temp.ref 
+        while temp.ref != self.head:
+            temp = temp.ref
+        temp.ref = second
+        self.head = second
+        return
 
 obj1 = CircularLinkedList()
 obj1.add_starting(40)
@@ -93,4 +106,6 @@ obj1.add_last(50)
 obj1.add_starting(0.1)
 obj1.add_after(30, 35)
 obj1.add_before(40, 37)
+obj1.print_ll()
+obj1.delete_start()
 obj1.print_ll()
