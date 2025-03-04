@@ -61,6 +61,29 @@ class CircularLinkedList:
                     temp.ref = new_node
             print("Value not found")
 
+    def add_before(self, value, data):
+        new_node = Node(data)
+        if self.head is None:
+            return 
+        if self.head.data == value:
+            temp = self.head
+            while temp.ref != self.head:
+                temp = temp.ref
+            temp.ref = new_node
+            new_node.ref = self.head
+            self.head = new_node
+            return
+        else:
+            prev = self.head
+            temp = self.head.ref
+            while temp != self.head:
+                if temp.data == value:
+                    new_node.ref = temp
+                    prev.ref = new_node
+                    return
+                prev = temp
+                temp = temp.ref
+
 
 obj1 = CircularLinkedList()
 obj1.add_starting(40)
@@ -70,4 +93,5 @@ obj1.add_starting(10)
 obj1.add_last(50)
 obj1.add_starting(0.1)
 obj1.add_after(30, 35)
+obj1.add_before(40, 37)
 obj1.print_ll()
