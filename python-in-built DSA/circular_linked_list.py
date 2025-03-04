@@ -47,19 +47,18 @@ class CircularLinkedList:
     def add_after(self, value, data):
         new_node = Node(data)
         if self.head is None:
-            new_node.ref = new_node
-            self.head = new_node
-        elif self.head.data == value:
-            self.head.ref = new_node
-            new_node.ref = self.head
-        else:
-            temp = self.head.ref
-            while(temp != self.head):
-                temp = temp.ref
-                if temp.data == value:
-                    new_node.ref = temp.ref
-                    temp.ref = new_node
-            print("Value not found")
+            print("List is empty, cannot insert after a value")
+            return
+        temp = self.head
+        while True:
+            if temp.data == value:
+                new_node.ref = temp.ref 
+                temp.ref = new_node
+                return
+            temp = temp.ref
+            if temp == self.head: 
+                break
+        print("Value not found")
 
     def add_before(self, value, data):
         new_node = Node(data)
