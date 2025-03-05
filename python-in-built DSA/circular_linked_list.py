@@ -145,7 +145,34 @@ class CircularLinkedList:
                 break
         print("Node not found")
     
+    def delete_before_specific(self, value):
+        if self.head is None:
+            print("Linked List is empty")
+            return
 
+        if self.head.ref == self.head:
+            print("Only one node present, no node before it to delete")
+            return
+
+        temp = self.head
+
+        # If the value is found at head, delete the last node
+        if self.head.data == value:
+            temp = self.head
+            while temp.ref.ref != self.head:
+                temp = temp.ref
+            temp.ref = self.head
+            return
+
+        # Traverse to find the node before the node with `value`
+        temp = self.head
+        while temp.ref.ref != self.head:
+            if temp.ref.ref.data == value:  # Found the node before `value`
+                temp.ref = temp.ref.ref  # Bypass the node before `value`
+                return
+            temp = temp.ref
+
+        print("Value not found")
 
 obj1 = CircularLinkedList()
 obj1.add_starting(40)
@@ -164,4 +191,6 @@ obj1.print_ll()
 obj1.delete_specific(40)
 obj1.print_ll()
 obj1.delete_after_specific(37)
+obj1.print_ll()
+obj1.delete_before_specific(35)
 obj1.print_ll()
