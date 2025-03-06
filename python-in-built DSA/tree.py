@@ -22,7 +22,13 @@ class BinaryST:
         print(self.data, end=" ")
         if self.rchild:
             self.rchild.inorder_traversal()
-
+    def preorder(self):
+        print(self.data, end=" ")
+        if self.lchild:
+            self.lchild.preorder()
+        if self.rchild:
+            self.rchild.preorder()
+    
 # Create the root node
 root = BinaryST(10)
 print("Root:", root.data)
@@ -40,4 +46,6 @@ print("Right child of root:", root.rchild.data if root.rchild else None)
 # Inorder traversal to verify correctness
 print("Inorder Traversal of BST:")
 root.inorder_traversal()
+print()
+root.preorder()
 print()
