@@ -35,7 +35,21 @@ class BinaryST:
         if self.rchild:
             self.rchild.postorder()
         print(self.data, end=" ")
-        
+    
+    def search(self, value):
+        if self.data == value:
+            print("Node is Found")
+            return
+        if value < self.data:
+            if self.lchild:
+                self.lchild.search(value)
+            else:
+                print("Node does not exist")
+        if value > self.data:
+            if self.rchild:
+                self.rchild.search(value)
+            else:
+                print("Node does not exist")
 # Create the root node
 root = BinaryST(10)
 print("Root:", root.data)
@@ -60,3 +74,4 @@ print()
 print("Postorder Traversal", end=" ")
 root.postorder()
 print()
+root.search(0)
