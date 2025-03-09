@@ -86,6 +86,53 @@ class AVL_tree:
         print(root.data, end=" ")
         self.preorder(root.lchild)
         self.preorder(root.rchild)
+    
+    def delete(self, root, key):
+        if not root:
+            return root
+        elif key < root.data:
+            root.lchild = self.delete(root.lchild, key)
+        elif key > root.data:
+            root.rchild = self.delete(root.rchild, key)
+        else:
+            if root.lchild is None:
+                temp = root.rchild
+                root = None
+                return temp
+            elif root.rchild is None:
+                temp = root.lchild
+                root = None
+                return temp
+            temp = self.getMinValue(root.rchild)
+            root.data = temp.data
+            root.right = self.delete(root.rchild, temp.data)
+        
+        if root is None:
+            return root
+        root.height = 1 + max(self.getHeight(root.lchild), self.getHeight(root.rchild))
+        balance = self.getBalance(root)
+
+        if balance > 1 and self.getBalance(root.lchild) >= 0:
+            return self.clockwiserotation(root)
+        
+        if balance > 1 and self.getBalance(root.lchild) <= 0:
+            root.lchild = self.anticlockwiserotation(root.lchild)
+            return self.anticlockwiserotation(root)
+        
+        if balance < 1 and self.getBalance(root.rchild) <= 0:
+            return self.clockwiserotation(root)
+        
+        if balance < 1 and self.getBalance(root.rchild) > 0:
+            root.rchild = self.anticlockwiserotation(root.rchild)
+            return self.clockwiserotation(root)
+
+        return root
+
+        
+    def getMinValue(self, root):
+        if root is None or root.lchild is None:
+            return None
+        return self.getMinValue(root.lchild)
 
 
 # 🌳 Creating the AVL Tree
@@ -97,5 +144,8 @@ for val in values:
     root = mytree.insert(root, val)
 
 print("Preorder of AVL tree:", end=" ")
+mytree.preorder(root)
+print()
+mytree.delete(root, 16)
 mytree.preorder(root)
 print()
