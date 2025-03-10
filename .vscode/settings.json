@@ -8,10 +8,10 @@
     "editor.wordBasedSuggestions": "off",
     "editor.parameterHints.enabled": false,
     "editor.inlineSuggest.enabled": false,
-    "editor.acceptSuggestionOnEnter": "off",
-    "editor.snippetSuggestions": "none",
-    "editor.autoClosingBrackets": "never",
-    "editor.autoClosingQuotes": "never",
+    // "editor.acceptSuggestionOnEnter": "off",
+    // "editor.snippetSuggestions": "none",
+    // "editor.autoClosingBrackets": "never",
+    // "editor.autoClosingQuotes": "never",
     "editor.autoSurround": "never",
     "editor.codeActionsOnSave": null,
     "typescript.suggest.autoImports": false,
@@ -20,4 +20,4 @@
     "scss.validate": false,
     "less.validate": false,
     "html.suggest.html5": false
-}
+    }
