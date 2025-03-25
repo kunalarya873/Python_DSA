@@ -23,9 +23,9 @@ def bfs(visited, graph, node):
                 visited.append(neighbour)
                 queue.append(neighbour)
 
-# print("output of bfs")
-# bfs(visited, graph, '5')
-# print()
+print("output of bfs")
+bfs(visited, graph, '5')
+print()
 
 
 # DFS
