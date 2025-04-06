@@ -7,7 +7,7 @@ def fractional_knapsack (weights, values, capacity):
     total_value = 0
     remaining_capacity = capacity
     for vpw, w, v in value_per_weight:
-        if w <- remaining_capacity:
+        if w <= remaining_capacity:
             total_value += v
             remaining_capacity -= w
         else:
