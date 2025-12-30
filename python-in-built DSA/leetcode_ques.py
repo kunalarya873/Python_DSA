@@ -65,4 +65,28 @@ def hashingNumber(n, m):
             res[i] = hashmap_n[i]
     return res
 
-print(hashingNumber([1,2,4,5,6,7,8,8,8,9,2,4,],[1,2,3,455,6,6,7,7,88,8,8,]))
+# print(hashingNumber("wfdzfndsfnsdfndsfbsdfsoiqjeroiqehfn",["w", 'f', "n", "d"]))
+
+
+def sumOfN(n):
+    if n == 1:
+        return 1
+
+    return n+sumOfN(n-1)
+
+def factorial(n):
+    if n == 1:
+        return 1
+    return n+factorial(n-1)
+
+def reverseOfArray(arr, start=0, end=None):
+    if end is None:
+        end = len(arr) - 1
+
+    if start >= end:
+        return arr
+
+    arr[start], arr[end] = arr[end], arr[start]
+    return reverseOfArray(arr, start + 1, end - 1)
+
+print(reverseOfArray([11, 2, 3, 4, 5, 6, 7]))
