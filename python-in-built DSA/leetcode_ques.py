@@ -37,3 +37,20 @@ def giveFactors(num: int):
 
 # Frequency in a dictionary
 
+def addFrequency(nums):
+    frequency_map = dict()
+    for i in nums:
+        if i in frequency_map:
+            frequency_map[i]+=1
+        else:
+            frequency_map[i]=1
+
+    hashmap = dict()
+    for i in nums:
+        hashmap[i] = hashmap.get(i, 0) + 1
+
+    return frequency_map
+
+print(addFrequency([1,3,4,5,22,55,1, 2,3, 4,5, 22, 1, 1]))
+
+
