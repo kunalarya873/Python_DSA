@@ -1,6 +1,6 @@
 #greedy
 
-def fractional_knapsack (weights, values, capacity):
+def fractional_knapsack (weights: list, values: list, capacity: int):
     n = len(weights)
     value_per_weight = [(values[i] / weights[i], weights[i], values[i]) for i in range(n)]
     value_per_weight.sort(reverse=True)
@@ -19,4 +19,4 @@ weights=[5, 25, 35]
 values=[60, 100, 120]
 capacity = 50
 max_profit=fractional_knapsack (weights, values, capacity)
-print(max_profit)
+print(f"{max_profit:.2f}")
