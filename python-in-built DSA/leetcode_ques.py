@@ -51,6 +51,18 @@ def addFrequency(nums):
 
     return frequency_map
 
-print(addFrequency([1,3,4,5,22,55,1, 2,3, 4,5, 22, 1, 1]))
+# print(addFrequency([1,3,4,5,22,55,1, 2,3, 4,5, 22, 1, 1]))
 
 
+
+def hashingNumber(n, m):
+    hashmap_n = dict()
+    for i in n:
+        hashmap_n[i] = hashmap_n.get(i, 0) + 1
+    res = dict()
+    for i in m:
+        if i in hashmap_n:
+            res[i] = hashmap_n[i]
+    return res
+
+print(hashingNumber([1,2,4,5,6,7,8,8,8,9,2,4,],[1,2,3,455,6,6,7,7,88,8,8,]))
