@@ -214,4 +214,15 @@ def isArraySorted(arr:list) -> bool:
             return False
     return True
 
-print(isArraySorted([1, 2, 3, 4, 5, 6]))
+# print(isArraySorted([1, 2, 3, 4, 5, 6]))
+
+def removeDuplicates(arr:list)-> list:
+    new_arr = []
+    for i in range(len(arr)-1):
+        if arr[i] == arr[i+1]:
+            continue
+        new_arr.append(arr[i])
+    new_arr.append(arr[-1])
+    return new_arr
+
+print(removeDuplicates([1, 2,2, 3, 3,3, 4, 4, 4, 5, 6]))
