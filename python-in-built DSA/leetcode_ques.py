@@ -98,4 +98,26 @@ def isPalindorome(string) -> bool:
 
     return curr == reverse
 
-print(isPalindorome("dfndosnf"))
+# print(isPalindorome("dfndosnf"))
+
+
+def selectionSort(arr: list)-> list:
+    for i in range(len(arr)):
+        min_idx = i
+        for j in range(i+1, len(arr)):
+            if arr[j] <arr[min_idx]:
+                min_idx = j
+        arr[i], arr[min_idx] = arr[min_idx], arr[i]
+    return arr
+
+def selectionSortIncr(arr: list)-> list:
+    for i in range(len(arr)):
+        max_idx = i
+        for j in range(i+1, len(arr)):
+            if arr[j] > arr[max_idx]:
+                max_idx = j
+        arr[i], arr[max_idx] = arr[max_idx], arr[i]
+    return arr
+
+
+print(selectionSortIncr([3, 5,63, 6, 2, 6, 11, 6, 1, 3,5,6,]))
