@@ -202,5 +202,16 @@ def findSecondLargest(arr: list):
             sec_larg = arr[i]
     return sec_larg
 
-print(mergeSort(arr))
-print(findSecondLargest(arr))
+# print(mergeSort(arr))
+# print(findSecondLargest(arr))
+
+def isArrayReversed(arr: list) -> bool:
+    return arr == arr[::-1]
+
+def isArraySorted(arr:list) -> bool:
+    for i in range(len(arr)-1):
+        if arr[i+1] < arr[i]:
+            return False
+    return True
+
+print(isArraySorted([1, 2, 3, 4, 5, 6]))
