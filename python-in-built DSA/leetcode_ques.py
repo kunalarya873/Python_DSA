@@ -180,7 +180,7 @@ def mergeSort(arr):
 
     return mergeSortedArray(left_arr, right_arr)
 
-print(mergeSort([3, 5,63, 6, 2, 6, 11, 6, 1, 3,5,6,]))
+# print(mergeSort([3, 5,63, 6, 2, 6, 11, 6, 1, 3,5,6,]))
 
 
 
@@ -195,4 +195,12 @@ def findLargestNumArray(arr):
             least = i
     return least
 
-print(findLargestNumArray(arr))
+def findSecondLargest(arr: list):
+    sec_larg = float("-inf")
+    for i in range(len(arr)):
+        if arr[i] > sec_larg and arr[i] !=  max(arr):
+            sec_larg = arr[i]
+    return sec_larg
+
+print(mergeSort(arr))
+print(findSecondLargest(arr))
