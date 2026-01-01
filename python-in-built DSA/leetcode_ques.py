@@ -226,7 +226,7 @@ def removeDuplicates(arr:list)-> list:
     return new_arr
 
 # print(removeDuplicates([1, 2,2, 3, 3,3, 4, 4, 4, 5, 6, 6, 6, 7]))
-
+from typing import List
 
 def maxRotateFunction(nums: List[int]) -> int:
         if len(nums) < 2:
@@ -242,5 +242,13 @@ def maxRotateFunction(nums: List[int]) -> int:
         return max_value
 
 
-
-print(maxRotateFunction([4,3,2,6]))
+def moveZeroes(nums: List[int]) -> None:
+    for i in nums:
+        if i == 0:
+            nums.remove(i)
+            nums.append(0)
+    return
+    
+nums = [0,1,0,3,12]
+moveZeroes(nums)
+print(nums)
