@@ -89,4 +89,13 @@ def reverseOfArray(arr, start=0, end=None):
     arr[start], arr[end] = arr[end], arr[start]
     return reverseOfArray(arr, start + 1, end - 1)
 
-print(reverseOfArray([11, 2, 3, 4, 5, 6, 7]))
+# print(reverseOfArray([11, 2, 3, 4, 5, 6, 7]))
+
+
+def isPalindorome(string) -> bool:
+    curr = list(str(string))
+    reverse = curr[::-1]
+
+    return curr == reverse
+
+print(isPalindorome("dfndosnf"))
