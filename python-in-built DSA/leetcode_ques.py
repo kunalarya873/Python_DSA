@@ -181,3 +181,18 @@ def mergeSort(arr):
     return mergeSortedArray(left_arr, right_arr)
 
 print(mergeSort([3, 5,63, 6, 2, 6, 11, 6, 1, 3,5,6,]))
+
+
+
+#Largest array in matrix
+
+arr = [1,3 -44,65,-644, 223, -44354, -632, -123,5,-4545,1,2345, -24, -55, 523,33,-534]
+
+def findLargestNumArray(arr):
+    least = arr[0]
+    for i in arr:
+        if i > least:
+            least = i
+    return least
+
+print(findLargestNumArray(arr))
