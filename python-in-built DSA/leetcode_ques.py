@@ -142,4 +142,42 @@ def insertionSort(arr:list)->list:
         arr[j+1] = key
     return arr
 
-print(insertionSort([3, 5,63, 6, 2, 6, 11, 6, 1, 3,5,6,]))
+# print(insertionSort([3, 5,63, 6, 2, 6, 11, 6, 1, 3,5,6,]))
+
+
+
+def mergeSortedArray(arr1, arr2):
+    result = []
+    i, j = 0, 0
+    n, m = len(arr1), len(arr2)
+    while i<n and j<m:
+        if arr1[i]< arr2[j]:
+            result.append(arr1[i])
+            i+=1
+        else:
+            result.append(arr2[j])
+            j+=1
+    if i < n:
+        while i<n:
+            result.append(arr1[i])
+            i+=1
+    if j<m:
+        while j<m:
+            result.append(arr2[j])
+            j+=1
+    return result
+
+def mergeSort(arr):
+    if len(arr) <= 1:
+        return arr
+    mid = len(arr)//2
+
+    left_arr = arr[:mid]
+    right_arr = arr[mid:]
+
+    left_arr = mergeSort(left_arr)
+    right_arr = mergeSort(right_arr)
+
+    return mergeSortedArray(left_arr, right_arr)
+
+print(mergeSort([3, 5,63, 6, 2, 6, 11, 6, 1, 3,5,6,]))
