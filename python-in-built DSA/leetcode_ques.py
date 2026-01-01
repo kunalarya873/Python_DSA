@@ -284,4 +284,16 @@ def mergeSortedArray(arr1: list, arr2: list):
     return sortedArray
 
 
-print(mergeSortedArray([1, 2, 3, 4, 5, 5, 5, 6, 6], [1,2,2, 3,3,3, 4, 4, 5, 5, 6 ,8, 9]))
+# print(mergeSortedArray([1, 2, 3, 4, 5, 5, 5, 6, 6], [1,2,2, 3,3,3, 4, 4, 5, 5, 6 ,8, 9]))
+
+
+def missingNumber(nums: List[int]) -> int:
+    arr = [i for i in range(len(nums)+1)]
+    for i in arr:
+        if i in nums:
+            continue
+        else:
+            return i
+    return -1
+
+print(missingNumber([3,0,1]))
