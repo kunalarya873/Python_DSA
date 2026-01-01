@@ -250,5 +250,38 @@ def moveZeroes(nums: List[int]) -> None:
     return
     
 nums = [0,1,0,3,12]
-moveZeroes(nums)
-print(nums)
+# moveZeroes(nums)
+# print(nums)
+
+
+def mergeSortedArray(arr1: list, arr2: list):
+    sortedArray = []
+    n = len(arr1)
+    m = len(arr2)
+
+    i = 0
+    j = 0
+
+    while i < n and j <m:
+        if arr1[i] <= arr2[j]:
+            if len(sortedArray) == 0 or sortedArray[-1] != arr1[i] :
+                sortedArray.append(arr1[i])
+            i+=1
+        else:
+            if len(sortedArray) == 0 or sortedArray[-1] != arr2[j]:
+                sortedArray.append(arr2[j])
+            j+=1
+    while i < n:
+        if len(sortedArray) == 0 or sortedArray[-1] != arr1[i]:
+            sortedArray.append(arr1[i])
+        i+=1
+
+    while j < m:
+        if len(sortedArray) == 0 or sortedArray[-1] != arr2[j]:
+            sortedArray.append(arr2[j])
+        j+=1
+
+    return sortedArray
+
+
+print(mergeSortedArray([1, 2, 3, 4, 5, 5, 5, 6, 6], [1,2,2, 3,3,3, 4, 4, 5, 5, 6 ,8, 9]))
