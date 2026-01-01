@@ -225,4 +225,22 @@ def removeDuplicates(arr:list)-> list:
     new_arr.append(arr[-1])
     return new_arr
 
-print(removeDuplicates([1, 2,2, 3, 3,3, 4, 4, 4, 5, 6]))
+# print(removeDuplicates([1, 2,2, 3, 3,3, 4, 4, 4, 5, 6, 6, 6, 7]))
+
+
+def maxRotateFunction(nums: List[int]) -> int:
+        if len(nums) < 2:
+            return 0
+
+        total_sum = sum(nums)
+        current_value = sum(i * nums[i] for i in range(len(nums)))
+        max_value = current_value
+
+        for i in range(1, len(nums)):
+            current_value += total_sum - len(nums) * nums[-i]
+            max_value = max(max_value, current_value)
+        return max_value
+
+
+
+print(maxRotateFunction([4,3,2,6]))
