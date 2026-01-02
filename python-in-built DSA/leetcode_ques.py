@@ -309,4 +309,17 @@ def repeatedNTimes(nums: List[int]) -> int:
             if val == highFrequency:
                 return key
 
-print(repeatedNTimes([2,1,2,5,3,2]))
+
+def findMaxConsecutiveOnes(nums: List[int]) -> int:
+        cons = 0
+        res =0
+        for i in nums:
+            if i == 1:
+                cons +=1
+                res = max(cons, res)
+            else:
+                cons = 0
+        return res
+print(findMaxConsecutiveOnes([1,0,1,1,0,1]))
+
+# print(repeatedNTimes([2,1,2,5,3,2]))
