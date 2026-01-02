@@ -296,4 +296,17 @@ def missingNumber(nums: List[int]) -> int:
             return i
     return -1
 
-print(missingNumber([3,0,1]))
+# print(missingNumber([3,0,1]))
+
+import collections
+
+def repeatedNTimes(nums: List[int]) -> int:
+        frequency = collections.defaultdict()
+        for i in nums:
+            frequency[i] = frequency.get(i, 0)+1
+        highFrequency = max(frequency.values())
+        for key, val in frequency.items():
+            if val == highFrequency:
+                return key
+
+print(repeatedNTimes([2,1,2,5,3,2]))
