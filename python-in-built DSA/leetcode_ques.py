@@ -396,4 +396,30 @@ def longestConsecutive(nums: List[int]) -> int:
         longest = max(count, longest)
     return longest
 
-print(longestConsecutive([7,1,5,3,6,4]))
+# print(longestConsecutive([7,1,5,3,6,4]))
+
+
+def upperTriangle(arr: list)->None:
+    for i in range(len(arr)):
+        print(end=i*"  ")
+        for j in range(len(arr)):
+            if i<=j:
+                print(arr[i][j], end=" ")
+        print()
+
+def lowerTriangle(arr:list)->None:
+    for i in range(len(arr)):
+        for j in range(len(arr)):
+            if i>=j:
+                print(arr[i][j], end=" ")
+        print()
+
+
+def printDiagonal(arr: list)-> None:
+    for i in range(len(arr)):
+        print(end=i*"  ")
+        for j in range(len(arr)):
+            if i==j:
+                print(arr[i][j], end=" ")
+        print()
+
