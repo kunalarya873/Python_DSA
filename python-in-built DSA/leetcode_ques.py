@@ -423,3 +423,18 @@ def printDiagonal(arr: list)-> None:
                 print(arr[i][j], end=" ")
         print()
 
+
+def transpose(arr: list)-> None:
+    rows = len(arr)
+    cols = len(arr[0])
+
+    matr = [[0] * rows for _ in range(cols)]
+
+    for i in range(rows):
+        for j in range(cols):
+            matr[j][i] = arr[i][j]
+
+    return matr
+
+# print(transpose([[2,1], [3, 4]]))
+
