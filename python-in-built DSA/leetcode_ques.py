@@ -320,6 +320,22 @@ def findMaxConsecutiveOnes(nums: List[int]) -> int:
             else:
                 cons = 0
         return res
-print(findMaxConsecutiveOnes([1,0,1,1,0,1]))
+
+
+def lengthOfLastWord( s: str) -> int:
+        list_of_str = list(s)
+        len_of_list_str = len(list_of_str)
+        last_word = []
+
+        for i in range(1, len_of_list_str):
+            if list_of_str[-i] == " ":
+                continue
+            elif list_of_str[-i] != " " and list_of_str[-i-1] == " ":
+                break
+            else:
+                last_word.append(list_of_str[-i])
+        return len(last_word) +1
+
+print(lengthOfLastWord("   fly me   to   the moon  "))
 
 # print(repeatedNTimes([2,1,2,5,3,2]))
