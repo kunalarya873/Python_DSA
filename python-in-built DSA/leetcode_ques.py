@@ -378,4 +378,22 @@ def maxProfit(arr: list)-> int:
     return profit
 
 
-print(maxProfit([7,1,5,3,6,4]))
+# print(maxProfit([7,1,5,3,6,4]))
+
+def longestConsecutive(nums: List[int]) -> int:
+    nums.sort()
+    longest = 0
+    count = 0
+    last_smaller = float("-inf")
+    for i in range(len(nums)):
+        num = nums[i]
+        if num -1 == last_smaller:
+            count +=1
+            last_smaller = num
+        elif num != last_smaller:
+            count =1
+            last_smaller =  num
+        longest = max(count, longest)
+    return longest
+
+print(longestConsecutive([7,1,5,3,6,4]))
