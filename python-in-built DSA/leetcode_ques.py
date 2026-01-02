@@ -438,3 +438,50 @@ def transpose(arr: list)-> None:
 
 # print(transpose([[2,1], [3, 4]]))
 
+def setZeroes(matrix: List[List[int]]) -> None:
+    """
+    Do not return anything, modify matrix in-place instead.
+    """
+    # col= 0
+    zero_idx = []
+
+    for i in range(len(matrix)):
+        if 0 in matrix[i]:
+            for j in range(len(matrix[i])):
+                if matrix[i][j] == 0:
+                    zero_idx.append([i, j])
+    print(zero_idx)
+    for i in range(len(zero_idx)):
+        for j in zero_idx[i]:
+            matrix[i][j] = 0
+    return
+nums = [[1,1,1],[1,0,1],[1,1,1]]
+# setZeroes(nums)
+
+# print(nums)
+
+
+def combine(n: int, k: int) -> List[List[int]]:
+        nums = [i for i in range(1,n+1)]
+        print(nums)
+        result = []
+        i =0
+        for i in range(1, len(nums)):
+            print(i)
+            for j in nums[i:]:
+                print(j)
+                res = [i]
+                for _ in range(k-1):
+                    res.append(j)
+                result.append(res)
+        return result
+
+# print(combine(2, 1))
+def isPalindrome(s: str) -> bool:
+        new_str = s.lower()
+        string = "".join(char for char in new_str if char.isalnum())
+        list_of_str = list(string)
+        if list_of_str == list_of_str[::-1]:
+            return True
+        else:
+            return False
