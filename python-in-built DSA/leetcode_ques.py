@@ -336,6 +336,33 @@ def lengthOfLastWord( s: str) -> int:
                 last_word.append(list_of_str[-i])
         return len(last_word) +1
 
-print(lengthOfLastWord("   fly me   to   the moon  "))
+# print(lengthOfLastWord("   fly me   to   the moon  "))
 
 # print(repeatedNTimes([2,1,2,5,3,2]))
+
+
+def maxSubArrya(arr:list)->int:
+    
+    i, j = 0, 1
+    maxi = float("-inf")
+    total = 0
+    for i in range(len(arr)):
+        total = 0
+        for j in range(i, len(arr)):
+            total += arr[j]
+            maxi = max(total, maxi)
+
+    return maxi
+
+
+def maxArray(arr:list)->int:
+    high = float("-inf")
+    total = 0
+    for i in arr:
+        total += i
+        high = max(total, high)
+        if total<0:
+            total =0
+    return high
+
+print(maxArray([5,4,-1,7,8]))
