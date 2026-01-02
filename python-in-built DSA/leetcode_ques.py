@@ -365,4 +365,17 @@ def maxArray(arr:list)->int:
             total =0
     return high
 
-print(maxArray([5,4,-1,7,8]))
+# print(maxArray([5,4,-1,7,8]))
+
+
+def maxProfit(arr: list)-> int:
+    profit = 0
+    min_price = float("inf")
+    for i in range(len(arr)):
+        min_price = min(arr[i], min_price)
+        profit = max(profit, arr[i]-min_price)
+
+    return profit
+
+
+print(maxProfit([7,1,5,3,6,4]))
