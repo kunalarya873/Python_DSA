@@ -577,3 +577,29 @@ def setZerosMatrix(arr: list[list[int]])-> None:
 # nums = [[1,1,1],[1,0,1],[1,1,1]]
 # setZerosMatrix(nums)
 # print(nums)
+
+
+from collections import deque, defaultdict
+
+class RateLimiter:
+    def __init__(self, N, T):
+        self.N = N
+        self.T = T
+        self.requests = defaultdict(deque)
+
+    def is_allowed(self, user_id: str, timestamp: int) -> bool:
+        q = self.requests[user_id]
+
+        while q and timestamp - q[0] >= self.T:
+            q.popleft()
+
+        if len(q) < self.N:
+            q.append(timestamp)
+            return True
+        else:
+            return False
+        
+# rl = RateLimiter(N=3, T=10)
+
+# for i in range(13):
+#     print(rl.is_allowed("user1", i))
