@@ -545,3 +545,35 @@ def printSpiralMatrix(matrix:list)->None:
 
 
 # printSpiralMatrix(arr)
+
+
+def setZerosMatrix(arr: list[list[int]])-> None:
+    
+    def setInfinity(matrix, row, col):
+        r = len(matrix)
+        c = len(matrix[0])
+
+        for i in range(r):
+            if matrix[i][col] != 0:
+                matrix[i][col] = float("inf")
+        for i in range(c):
+            if matrix[row][i] != 0:
+                matrix[row][i] = float("inf")
+
+    r, c = len(arr), len(arr[0])
+
+    for i in range(r):
+        for j in range(c):
+            if arr[i][j] == 0:
+                setInfinity(arr, i, j)
+    
+    for i in range(r):
+        for j in range(c):
+            if arr[i][j] == float("inf"):
+                arr[i][j] = 0
+    
+    return
+
+# nums = [[1,1,1],[1,0,1],[1,1,1]]
+# setZerosMatrix(nums)
+# print(nums)
