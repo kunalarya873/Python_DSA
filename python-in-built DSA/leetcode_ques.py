@@ -623,3 +623,12 @@ def sumFourDivisors(nums: List[int]) -> int:
             total += sum(divisors)
 
     return total
+
+
+def reverseWords(s: str) -> str:
+    s_list = s.split()
+    s_list.reverse()
+    return " ".join(s_list)
+
+# new = reverseWords("       the sky is blue       kk")
+# print(new)
