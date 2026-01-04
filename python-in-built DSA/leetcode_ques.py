@@ -603,3 +603,23 @@ class RateLimiter:
 
 # for i in range(13):
 #     print(rl.is_allowed("user1", i))
+
+
+def sumFourDivisors(nums: List[int]) -> int:
+    total = 0
+
+    for n in nums:
+        divisors = set([1, n])
+
+        for i in range(2, int(math.sqrt(n)) + 1):
+            if n % i == 0:
+                divisors.add(i)
+                divisors.add(n // i)
+
+            if len(divisors) > 4:
+                break
+
+        if len(divisors) == 4:
+            total += sum(divisors)
+
+    return total
