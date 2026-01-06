@@ -632,3 +632,54 @@ def reverseWords(s: str) -> str:
 
 # new = reverseWords("       the sky is blue       kk")
 # print(new)
+
+def coinChange(coins: List[int], amount: int) -> int:
+    if amount <=0:
+        return 0        
+    count = 0
+    coins.sort()
+    for i in range(len(coins)):
+        curr_coin = coins[len(coins)-i-1]
+        while amount >= curr_coin:
+            print(f"amount {amount} - curr_coin {curr_coin}")
+            amount -= curr_coin
+            count +=1
+    print(amount)
+    if amount == 0:
+        return count
+    else:
+        return -1
+
+# coins = [186,419,83,408]
+# amount = 6249
+
+# print(coinChange(coins, amount))
+
+
+
+class RateLimit:
+    def __init__(self, N, T):
+        self.N = N
+        self.T = T
+        self.requests = collections.defaultdict(deque)
+
+    def to_process(self, user_id: str, timestamp:int)->bool:
+        q = self.requests[user_id]
+
+        while q and timestamp- q[0]>=self.T:
+            q.popleft()
+        
+        if len(q) < self.N:
+            q.append(timestamp)
+            return True
+        else:
+            return False
+        
+
+# r = RateLimit(N=3, T=60)
+
+# for i in range(62):
+#     if r.to_process("user_id", i) == True:
+#         print("Is allowed on req", i)
+
+
