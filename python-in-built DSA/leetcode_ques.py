@@ -683,3 +683,54 @@ class RateLimit:
 #         print("Is allowed on req", i)
 
 
+
+
+def binarySearch(nums:list, target:int)->int:
+    n = len(nums)
+    low = 0
+    high = n-1
+
+    while low<high:
+        mid = (low+high)//2
+        if nums[mid] == target:
+            return mid
+        elif nums[mid]<target:
+            low=mid+1
+        else:
+            high = mid-1
+    return -1
+
+# print(binarySearch([1,2,3,4, 5, 6,7, 9, 11, 333, 5555, 6777 ], 7))
+
+def upperBound(nums: list, target: int)->int:
+    n = len(nums)
+    low = 0
+    high = n-1
+    lb=n
+    while low<=high:
+        mid = (low+high)//2
+        if nums[mid]>=target:
+            lb = mid
+            high = mid -1
+        else:
+            low = mid +1
+    return lb
+
+def lowerBound(nums:list, target:int)->list:
+    n = len(nums)
+    low = 0
+    high = n-1
+    ub=n
+    while low<=high:
+        mid = (low+high)//2
+        if nums[mid]>target:
+            ub = mid
+            high = mid -1
+        else:
+            low = mid +1
+    return ub
+
+print(lowerBound([1,2,3,4, 5, 6,6,6,6,7, 9, 11, 333, 5555, 6777 ], 7))
+
+
+
