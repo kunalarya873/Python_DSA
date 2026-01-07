@@ -730,7 +730,25 @@ def lowerBound(nums:list, target:int)->list:
             low = mid +1
     return ub
 
-print(lowerBound([1,2,3,4, 5, 6,6,6,6,7, 9, 11, 333, 5555, 6777 ], 7))
+# print(lowerBound([1,2,3,4, 5, 6,6,6,6,7, 9, 11, 333, 5555, 6777 ], 7))
 
 
+
+def ceilTheFloor(nums:list, target:int)-> list:
+    low = 0
+    high = len(nums)-1
+    ceil = -1
+    floor = -1
+
+    while low<high:
+        mid = (low+high)//2
+        if nums[mid] == target:
+            return [nums[mid], nums[mid]]
+        elif nums[mid]>target:
+            ceil = nums[mid-1]
+            high = mid-1
+        else:
+            floor = nums[mid]
+            low = mid+1
+    return [ceil, floor]
 
