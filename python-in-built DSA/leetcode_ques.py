@@ -752,3 +752,29 @@ def ceilTheFloor(nums:list, target:int)-> list:
             low = mid+1
     return [ceil, floor]
 
+
+def firstAndLastOccurence(nums:list, target:int)->int:
+    u = upperBound(nums, target)
+    l = lowerBound(nums, target)
+    if u == 0:
+        return [-1, -1]
+    else:
+        return [u, l]
+
+
+
+def countOccurenceOftheArray(nums:list, target:int)-> int:
+    low = 0
+    high = len(nums) -1
+    count = 0
+    while low < high:
+        mid = (low+high)//2
+        if nums[mid]==target:
+            count+=1
+        elif nums[mid]>target:
+            high=mid-1
+        else:
+            low = mid+1
+    return count
+
+# print(firstAndLastOccurence([1,2,3,4, 5, 6,6,6,6,7, 9, 11, 333, 5555, 6777 ], 4444))
