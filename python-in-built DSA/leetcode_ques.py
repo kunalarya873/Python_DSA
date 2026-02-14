@@ -650,6 +650,25 @@ def coinChange(coins: List[int], amount: int) -> int:
     else:
         return -1
 
+
+class RateLimiter:
+
+    def __init__(self, N, T):
+        self.N = N
+        self.T = T
+        self.request = collections.defaultdict(deque)
+    
+    def to_process(self, user_id:str, timestamp: str):
+        q = self.request[user_id]
+        while q and timestamp-q[0]>= self.T:
+            q.popleft()
+        
+        if len(q)<= self.N:
+            q.append(timestamp)
+            return True
+        else:
+            return False
+
 # coins = [186,419,83,408]
 # amount = 6249
 
@@ -778,3 +797,108 @@ def countOccurenceOftheArray(nums:list, target:int)-> int:
     return count
 
 # print(firstAndLastOccurence([1,2,3,4, 5, 6,6,6,6,7, 9, 11, 333, 5555, 6777 ], 4444))
+
+
+class Node:
+    def __init__(self, val):
+        self.val = val
+        self.next = None
+
+    def __str__(self):
+        return str(self.val)
+
+class LinkedList:
+    def __init__(self):
+        self.head = None
+        self.tail = None
+        self.length = 0
+
+    def __str__(self):
+        temp_node = self.head
+        result = ''
+        while temp_node is not None:
+            result += str(temp_node.val)
+            if temp_node.next is not None:
+                result += ' -> '
+            temp_node = temp_node.next
+        return result
+
+
+    def append(self, val):
+        new_node = Node(val)
+        if self.head is None:
+            self.head = new_node
+            self.tail = new_node
+        else:
+            self.tail.next = new_node
+            self.tail = new_node
+        self.length +=1
+    
+
+    def append_at(self, val, position):
+        new_node = Node(val)
+
+        if position ==0:
+            new_node.next = self.head
+            self.head = new_node
+        else:
+            curr = self.head
+            prev_node = None
+            count = 0
+            while curr is not None and count <position:
+                prev_node = curr
+                curr = curr.next
+                count+=1
+            prev_node.next = new_node
+            new_node.next = curr
+
+    def reverse(self):
+        prev = None
+        curr = self.head
+
+        while curr:
+            next = curr.next
+            curr.next = prev
+            prev = curr
+            curr = next
+
+        return
+
+    def reverse_ll(self):
+        prev = None
+        curr = self.head
+
+        while curr:
+            next = curr.next
+            curr.next = prev
+            prev = curr
+            curr = next
+
+        
+
+
+new_ll = LinkedList()
+new_ll.append(1)
+new_ll.append(2)
+new_ll.append(3)
+new_ll.append(4)
+new_ll.append(5)
+new_ll.append_at(4, 3)
+# print(new_ll)
+new_ll.reverse()
+# print(new_ll)
+
+
+
+class DoublyLL:
+    def __init__(self):
+        self.head = None
+
+    def add_start(self, val):
+        new_node = Node(val)
+        if self.head == None:
+            self.head = new_node
+        else:
+            new_node.next = self.head
+            self.head.prev = new_node
+            self.head = new_node
