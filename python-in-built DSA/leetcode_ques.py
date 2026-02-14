@@ -877,17 +877,22 @@ class LinkedList:
         
 
 
-new_ll = LinkedList()
-new_ll.append(1)
-new_ll.append(2)
-new_ll.append(3)
-new_ll.append(4)
-new_ll.append(5)
-new_ll.append_at(4, 3)
-# print(new_ll)
-new_ll.reverse()
+# new_ll = LinkedList()
+# new_ll.append(1)
+# new_ll.append(2)
+# new_ll.append(3)
+# new_ll.append(4)
+# new_ll.append(5)
+# new_ll.append_at(4, 3)
+# # print(new_ll)
+# new_ll.reverse()
 # print(new_ll)
 
+class Node:
+    def __init__(self, val):
+        self.next = None
+        self.val = val
+        self.prev = None
 
 
 class DoublyLL:
@@ -902,3 +907,30 @@ class DoublyLL:
             new_node.next = self.head
             self.head.prev = new_node
             self.head = new_node
+
+
+    def add_end(self, val):
+        new_node = Node(val)
+        if not self.head:
+            self.head = new_node
+        else:
+            curr = self.head
+            while curr.next:
+                curr = curr.next
+            new_node.prev = curr
+            curr.next = new_node
+
+    def write(self):
+        curr = self.head
+        while curr:
+            print(curr.val, end=" ")
+            curr = curr.next
+        print()
+        
+
+dll = DoublyLL()
+dll.add_start(2)
+dll.add_start(1)
+dll.add_end(3)
+
+dll.write()
