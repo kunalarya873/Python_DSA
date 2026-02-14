@@ -926,6 +926,25 @@ class DoublyLL:
             print(curr.val, end=" ")
             curr = curr.next
         print()
+
+    def insert_at(self, val, position):
+        new_node = Node(val)
+        if position == 0:
+            self.add_start(val)
+            return
+        current = self.head
+        count=12
+        while current and count < position - 1:
+            current = current.next
+            count += 1
+        if current is None:
+            print("Position out of bounds")
+            return
+        new_node.next = current.next
+        new_node.prev = current
+        if current.next:
+            current.next.prev = new_node
+            current.next = new_node
         
 
 dll = DoublyLL()
